@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootsrap/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+
+<marquee behavior="" direction=""><h3>welcome to my dashboard</h3></marquee>
+<div id="display"></div>
+<body>
+    <script>
+        const allUsers = JSON.parse(localStorage.getItem("mykey"))
+        const currentUserIndex = localStorage.getItem('currentuser')
+        const currentUserDetails = allUsers[currentUserIndex]
+        console.log(currentUserDetails)
+        display.innerHTML = `${currentUserDetails.email} ${currentUserDetails.firstname}`
+
+        
+    </script>
+</html>

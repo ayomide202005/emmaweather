@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./forloop.css">
+</head>
+
+<div>
+    <input type="text" placeholder="number" id="userInput">
+    <input type="text" placeholder="number" id="secondInput">
+    <button onclick="score()" class="button">score</button>
+</div>
+<div id="display"></div>
+
+
+<body>
+
+
+    <script>
+        function score() {
+            let user = userInput.value;
+            let second = secondInput.value
+            userInput.value=""
+            secondInput.value=""
+
+            for (let user = 1; user<=12; user++) {
+                // for (let second = 1; second <=12; second++) {
+                    console.log(second * user);
+                    
+                // }
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>

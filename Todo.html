@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootsrap/bootstrap-5.2.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="bg-seondary mx-auto mt-5 p-5 rounded-4 shadow col-lg-7 col-md-5 col-sm-12">
+        <h1 style="text-align: center;text-decoration: underline; " class="text-dark fs-3">Todo list</h1>
+        <input type="text" placeholder="first todo" id="first" class="form-control mt-3">
+        <input type="text" placeholder="second todo" id="second" class="form-control mt-3">
+        <table id="allbuttons"  class="table table-bordered border-primary mt-1"></table>
+
+        <div class="d-flex mt-3 gap-2 p-3">
+            <button onclick="addtodo()" class=" bg-info form-control w-25 center mx-auto mb-3 text-light">Add</button>
+            <button onclick="deletetodo()" class=" bg-warning form-control w-25 center mx-auto mb-3 text-light">delete last</button>
+            <button onclick="deletetall()" class=" bg-dark form-control w-25 center mx-auto mb-3 text-light">delete all</button>
+            <button onclick="deletefirst()" class=" bg-dark form-control w-25 center mx-auto mb-3 text-light">delete first</button>
+        </div>
+
+        <!-- <div id="display" class="bg-seondary shadow mx-auto"></div>      -->
+    </div>
+
+
+</body>
+
+<script>
+
+    const todo = []
+
+
+    function addtodo() {
+        if (first.value == "" && second.value == "") {
+            alert("enter you input")
+
+        } else {
+            var object = {
+                firsttodo: first.value,
+                secondtodo: second.value,
+                newdate :` ${new Date().toLocaleDateString()}`,
+                newTime : `${new Date().toLocaleTimeString()} `
+                
+            }
+            console.log(object)
+            todo.push(object)
+            console.log(todo);
+            displaytodo()
+
+        
+
+        first.value = ""
+        second.value = ""
+    }
+    }
+    
+    function displaytodo() {
+        allbuttons.innerHTML = ""
+        allbuttons.innerHTML = `
+        <tr>
+            <td>S/N</td>
+            <td>first todo</td>
+            <td>second todo</td>
+            <td>date</td>
+            <td>time</td>
+            
+            </tr>
+        
+        `
+
+        
+        for (let i = 0; i < todo.length; i++) {
+            allbuttons.innerHTML += `
+                <tr>
+                    <th>${i+1}</th>
+                    <th>${todo[i].firsttodo}</th>
+                 <th>${todo[i].secondtodo}</th>
+                 <th>${todo[i].newdate}</th>
+                 <th>${todo[i].newTime}</th>
+                 </tr>
+                 `
+        }
+    }
+
+
+
+    function deletetodo() {
+        displaytodo()
+        todo.pop()
+
+    }
+
+    function deletetall(){
+        displaytodo()  
+        todo.splice(0,todo.length)
+    }
+
+    function deletefirst(){
+        displaytodo()
+        todo.shift()
+    }
+</script>
+
+</html>

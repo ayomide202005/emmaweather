@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootsrap/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-info mx-auto p-4 w-50 mt-3">
+
+        <input type="text" placeholder="currency" id="currency" class="form-control mt-3">
+        <button onclick="dollar()" class="form-control mt-3 bg-dark text-light">convert dollar to naira</button>
+        <button onclick="pounds()" class="form-control mt-3 bg-primary text-light">convert pounds to naira</button>
+        <button onclick=" euro()" class="form-control mt-3 bg-warning text-light"> convert euro to naira</button>
+        <button onclick=" canada()" class="form-control mt-3 mb-4 bg-danger text-light"> convert canadian dollar to naira</button>
+        <div id="display"></div>
+    </div>
+</body>
+
+    <script>
+        
+        function dollar (){
+            var curren = currency.value
+            var amount = 1500
+            var result = curren * amount
+            display.innerHTML =  result
+        }
+
+        function pounds(){
+            var curren = currency.value
+            var amount = 2014.82
+            var result = curren * amount 
+            display.innerHTML =  result
+        }
+    </script>
+
+</html>

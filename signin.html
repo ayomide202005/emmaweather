@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootsrap/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-primary mt-2">
+        <div class="p-2">
+            <input type="text" placeholder="email" id="email" class="form-control mt-2">
+            <input type="text" placeholder="pasword" id="passW" class="form-control mt-2">
+            <button onclick="signin()" class="form-control mt-2 mb- bg-warning">signin</button>
+
+        </div>
+    </div>
+</body>
+
+    <script>
+
+        const passkey = JSON.parse(localStorage.getItem("mykey"))
+
+        function signin(){
+            let found = false
+            if(email.value=="" && passW.value==""){
+                alert("input your details")
+            }else{
+                for (let index = 0; index < passkey.length; index++) {
+                    if(email.value == passkey[index].email && passW.value== passkey[index].password){
+                        localStorage.setItem("currentuser",index)
+                        found = true
+                    }
+                }
+            }if(found==true){
+                window.location.href ="dashboard.html"
+            }else{
+                alert("not corresponding info")
+            }
+        }
+    </script>
+
+</html>

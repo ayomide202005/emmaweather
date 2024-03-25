@@ -1,0 +1,27 @@
+marquee{
+    background-color: blue;
+    margin-top: 50px;
+}
+.sec1{
+    border: 1px solid red;
+    display: flex;
+}
+.child1 img{
+    width: 500px;
+}
+.child2 h1{
+    margin-left: 50px;
+}
+.child2 p{
+    margin-left: 50px;
+}
+.sec2{
+    border: 1px solid red;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.sec2 div{
+    border: 1px solid yellow;
+    height: 50vh;
+}

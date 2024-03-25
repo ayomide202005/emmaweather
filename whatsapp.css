@@ -1,0 +1,75 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.container{
+    background-color: green;
+    height: 30vh;
+}
+h2{
+    margin-left: 50px;
+    padding-top: 50px;
+    color: black;
+}
+.whatsappimg{
+    background-color: beige;
+    height: 100vh;
+    margin-top: -70px;
+    position: absolute;
+    width: 70%;
+    align-items: center;
+    margin-left: 200px;
+}
+.img{
+    display: flex;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid green;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    padding: 20px;
+}
+.button{
+    background-color: green;
+    width: 100px;
+    border-radius: 10px;
+    color: white;
+}
+.head{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.container2{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.Qrimg{
+    
+}
+
+hr{
+    border: 1px solid grey;
+    margin-top: 40px;
+}
+.header{
+    margin-top: 50px;
+}
+.href{
+    margin-top: 30px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: green;
+}
+.video{
+    margin-left: 250px;
+    margin-bottom: 50px;
+}
+.videocontainer{
+    background-color: blanchedalmond;
+    margin-top: 50px;
+}

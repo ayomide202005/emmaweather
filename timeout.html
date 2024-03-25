@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="hr" id="hr">
+        <input type="text" placeholder="mn" id="mn">
+        <input type="text" placeholder="ss" id="ss">
+        <button onclick="start()">start</button>
+    </div>
+</body>
+<script>
+    function start() {
+
+        var seconds = ss.value
+        var minutes = mn.value
+        var hours = hr.value
+
+        setTimeout(start, 1000)
+        if (seconds == 0 && minutes == 0 && hours == 0) {
+            ss.value = 0
+            hr.value = 0
+            mn.value = 0
+        } else if (seconds != 0) {
+            ss.value--
+        } else if (minutes != 0 && seconds == 0) {
+            ss.value = 59
+            mn.value--
+
+        } else if(hours !=0 && minutes ==0){
+            mn.value = 59
+            hr.value--
+            
+        }
+
+    }
+
+  
+
+</script>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./api.css">
+    <link rel="stylesheet" href="./bootsrap/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+
+<body class="container">
+
+    <div class="row">
+
+        <p class="text-light mt-3 fs-5">check your city, state and your current country weather here!!!
+        <p>
+
+        <div class="col-sm-12 col-md-12 col-lg-3 my-5">
+            <div id="seven" class="text-info"></div>
+            <p class="text-light mt-5">user current temperature
+            <p>
+            <div id="eight" class="text-info"></div>
+            <p class="text-light mt-5"> current user date
+            <p>
+            <div id="nine" class="text-info"></div>
+            <p class="text-light mt-5"> current user time
+            <p>
+        </div>
+
+        <div class="container-div col-sm-12 col-md-12 col-lg-3 my-5">
+
+            <input type="text" placeholder="city name" id="userinput" class=""><br>
+            <button onclick="weather()" class="btn btn-primary form-control w-25 mt-3">check</button>
+        </div>
+
+        <div id="disp" class="text-light text-center border rounded mt-3 p-3 col-sm-12 col-md-12 col-lg-3 my-5">
+            <div>
+                <span class="">Name</span> :
+                <span id="one">Find Place</span>
+
+            </div>
+            <hr>
+
+            <div>
+                <span>Temperature</span> :
+                <span id="two">0</span><sup>0</sup>C
+
+            </div>
+            <hr>
+
+            <div>
+                <span>latitude </span> :
+                <span id="three">0</span>
+
+            </div>
+            <hr>
+
+            <div>
+                <span>longitude</span> :
+                <span id="four">0</span>
+
+            </div>
+            <hr>
+
+            <div>
+                <span>sunrise</span> :
+                <span id="five">sunset</span>
+            </div>
+            <hr>
+
+            <div>
+                <span>sunset</span> :
+                <span id="six">sunset</span>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    function weather() {
+        let weather = userinput.value
+        let key = "0a5b42ed2bbd90a228c5aec6190033cf"
+        let point = `https://api.openweathermap.org/data/2.5/weather?q=${weather}&appid=${key}`
+        let userdate = new Date().toLocaleDateString()
+        let usertime = new Date().toLocaleTimeString()
+        fetch(point).then((response) => {
+            return response.json();
+
+        }).catch((err) => {
+            console.log(err)
+        })
+
+            .then((data) => {
+                console.log(data)
+                one.innerHTML = `${data.name}`
+                two.innerHTML = `${data.main.temp / 10}`
+                three.innerHTML = `${data.coord.lat}`
+                four.innerHTML = `${data.coord.lon}`
+                five.innerHTML = `${data.sys.sunrise}`
+                six.innerHTML = `${data.sys.sunset}`
+                seven.innerHTML = `${data.main.temp / 10}`
+                eight.innerHTML = `${userdate}`
+                nine.innerHTML = `${usertime}`
+                userinput.value = ""
+            })
+        console.log("next line")
+
+    }
+
+</script>
+
+</html>

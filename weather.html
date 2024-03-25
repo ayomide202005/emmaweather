@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="enter your weather" id="weather">
+    <button onclick="checkweather()">check</button>
+    <div id="display"></div>
+</body>
+<script>
+    function checkweather() {
+        let cloud = weather.value;
+        let message ="";
+        if (cloud == "rainy") {
+            message = "go out with your sweater"
+            console.log("go out with your sweater")
+        } else if (cloud == "sun") {
+            message= "go out with your umbrella,when you  are going to church"
+            console.log("go out with your umbrella,when you  are going to church")
+        } else {
+            message= "no plan for today"
+            console.log("no plan for today")
+        }
+        display.innerHTML += `${message}`
+        weather.value = ""
+    }
+
+
+
+</script>
+
+</html>

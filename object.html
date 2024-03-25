@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="viewObject()">view object</button>
+</body>
+
+<script>
+
+    function viewObject() {
+        const fruitObj = {
+                            fruit1 : "banana",
+                            fruit2 : "apple"
+                        }
+
+
+                        const person ={
+                            name:"ore",
+                            age :70,
+                            "school attended":"sqi"
+                        }
+
+                        person.course = "software enginnering"
+                        console.log(person)
+                        console.log(person.name)
+                        console.log(person["school attended"])
+                        person.name = "demola"
+                        delete person.age
+
+
+                            //forloop
+                        // for (let i = 0; i<5; i++){
+                        //     console.log(i)
+                        // }
+
+
+                        //array
+
+                        const fruits =["bannana","apple","pear","orange","watermelon"]
+                        for(let item = 0; item<fruits.length; item++){
+                            console.log(item)
+                            console.log(fruits[item])
+                        }
+
+
+                        const name =["ayomide", "emmanuel","oluwatosin","adeyemi"]
+                        console.log(name)
+                        console.log(name.length)
+                        console.log(name[2])
+
+                        let Generator = {
+                            nickname:"emmani",
+                            age:18,
+
+                        }
+                        console.log(Generator)
+                        console.log(Generator.age)
+                        Generator.nickname = "tosin"
+                        delete Generator.age
+    }
+    
+
+</script>
+
+</html>
